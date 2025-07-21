@@ -1325,6 +1325,7 @@
             </div>
           </div>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>
             onload = () => {
                 const c = setTimeout(() => {
@@ -1332,6 +1333,37 @@
                 clearTimeout(c);
                 }, 1000);
             };
+            setTimeout(() => {
+          let timerInterval;
+          Swal.fire({
+            title: 'Yes to Contact Me',
+            html: `
+              <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" width="80"><br>
+              Redirecting in <b></b> seconds...<br> heheheheehehe 😁❤️
+            `,
+            icon: 'info',
+            showCancelButton: true,
+            confirmButtonText: 'Yes',
+            cancelButtonText: 'Cancel',
+            allowOutsideClick: false,
+            timer: 6000,
+            timerProgressBar: true,
+            didOpen: () => {
+              const b = Swal.getHtmlContainer().querySelector('b');
+              timerInterval = setInterval(() => {
+                b.textContent = Math.ceil(Swal.getTimerLeft() / 1000);
+              }, 100);
+            },
+            willClose: () => {
+              clearInterval(timerInterval);
+            }
+          }).then((result) => {
+            if (result.isConfirmed) {
+              window.location.href = "https://t.me/theavithean";
+            }
+            // If canceled or dismissed, do nothing
+          });
+        }, 6000);
         </script>
     </body>
 </html>
