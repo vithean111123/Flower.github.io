@@ -1022,6 +1022,32 @@
         .not-loaded * {
             animation-play-state: paused !important;
         }
+        @media (max-width: 480px) {
+  .flowers {
+    max-width: 320px;
+    padding: 5px;
+  }
+
+  .flower {
+    transform: scale(0.6); /* shrink flowers */
+  }
+
+  .flower__light {
+    width: 4px;
+    height: 4px;
+  }
+
+  .flower__white-circle {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* 🌸 Center popup (sweetalert) better on small screens */
+.swal2-popup {
+  width: 90% !important;
+  font-size: 14px;
+}
     </style>
 </head>
   
